@@ -1,9 +1,9 @@
 Creando una instancia Ubunto en AWS EC2
 ---
 
-Si ya tienes una cuenta de AWS, puedes brincar a la sección [Creando un usuario para EC2](#usuario-ec2).
+Si ya tienes una cuenta de AWS, puedes brincar a la sección [Creando un usuario para EC2](#creando-un-usuario-para-ec2).
 
-Para el curso creamos una cuenta totalmente nueva para apoyar a todos los que 
+Para el curso creamos una cuenta totalmente nueva para apoyar a todos los que están utilizando por primera vez AWS.
 
 ## Habilitar 2FA
 AWS es una plataforma ocupada masivamente por un gran número de desarrolladores en el mundo, lo que la convierten también en un servicio altamente vulnerable si no se siguen ciertas medidas de seguridad básicas, así que recomendamos ampliamente habilitar el factor de doble autenticación (2FA) a la cuenta Root.
@@ -36,7 +36,7 @@ Podemos cerrar sesión del usuario root.
 
 Ingresamos nuevamente pero ne lugar de usuario root selecionaremos la opción "IAM user". En la siguiente pantalla solicitará el ID de la cuenta (Account ID) junto con el nombre de usuario con los permisos limitados y su password que podremos ver en el csv recién descargado.
 
-## Creando un usuario para EC2 {#usuario-ec2}
+## Creando un usuario para EC2
 
 Ya que ingresemos con nuestro usuario con permisos limitados, buscamos el producto [AWS EC2](https://aws.amazon.com/es/ec2/) e ingresamos.
 
@@ -100,9 +100,9 @@ Ahora veremos todas las opciones existentes para conectarnos a nuestra instancia
 Algo así serían los pasos en la terminal:
 
 ```
-    $ cd /path/to/folder/
+$ cd /path/to/folder/
 
-    $ chmod 400 node-manager-access.pem
+$ chmod 400 node-manager-access.pem
 ```
 
 Donde **/path/to/folder/** es la ubicación donde guardamos nuestro archivo .pem
@@ -114,12 +114,12 @@ El comando **chmod** asigna el permiso **400**, lo que significa que únicamente
 Ahora suponiendo que la terminal está ubicada en el folder que contiene nuestro archivo .pem, podemos correr el comando señalado en el ejemplo de la imagen 1.8 para conectarnos a nuestra instancia.
 
 ```
-    $ ssh -i "node-manager-access.pem" ubuntu@xxx-xx-xxx-xxx-xxx.compute-1.amazonaws.com
+$ ssh -i "node-manager-access.pem" ubuntu@xxx-xx-xxx-xxx-xxx.compute-1.amazonaws.com
 
-    The authenticity of host 'ec2-xx-xxx-xxx-xxx.compute-1.amazonaws.com (xx.xxx.xxx.xxx)' can't be established.
-    ED25519 key fingerprint is SHA256:XXuXeXXXX+V6+/yXX+XXXP2XxXXxw/XxxXxXXqXtXXX.
-    This key is not known by any other names
-    Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+The authenticity of host 'ec2-xx-xxx-xxx-xxx.compute-1.amazonaws.com (xx.xxx.xxx.xxx)' can't be established.
+ED25519 key fingerprint is SHA256:XXuXeXXXX+V6+/yXX+XXXP2XxXXxw/XxxXxXXqXtXXX.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 
 ```
 
