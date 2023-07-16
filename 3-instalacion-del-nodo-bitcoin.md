@@ -10,7 +10,7 @@ Buscamos en internet Bitcoin core y abrimos la [página oficial](https://bitcoin
 Con clic derecho y "Copy link address", copia la url de descarga de Bitcoin Core y utiliza el comando wget para descargarlo en la instancia EC2 como se muestra a continuación:
 
 ```bash
-$ wget https://bitcoincore.org/bin/bitcoin-core-23.0/bitcoin-23.0-x86_64-linux-gnu.tar.gz
+$ wget https://bitcoincore.org/bin/bitcoin-core-25.0/bitcoin-25.0-x86_64-linux-gnu.tar.gz
 ```
 
 > :warning: No ocupes la url que yo estoy proporcionando, consíguela tú mismo y sustituye aunque sea la misma.
@@ -22,9 +22,9 @@ Comenzará a descargar y tomará un tiempo según la conexión, espera a que ter
 Descargamos los siguientes archivos:
 
 ```bash
-$ wget https://bitcoincore.org/bin/bitcoin-core-23.0/SHA256SUMS
+$ wget https://bitcoincore.org/bin/bitcoin-core-25.0/SHA256SUMS
 
-$ wget https://bitcoincore.org/bin/bitcoin-core-23.0/SHA256SUMS.asc
+$ wget https://bitcoincore.org/bin/bitcoin-core-25.0/SHA256SUMS.asc
 
 $ sha256sum --ignore-missing --check SHA256SUMS
 ```
@@ -33,19 +33,20 @@ Verificar el archivo de descarga es opcional pero altamente recomendado para ase
 
 El proceso realiza una validación verificando que la firma de los desarrolladores de bitcoin core estén presentes en el release.
 
-Para iniciar el proceso, primero hay que descargar las [llaves de los desarrolladores](https://github.com/bitcoin/bitcoin/tree/master/contrib/builder-keys), el proceso se puede hacer con una o varias:
+Para iniciar el proceso, primero hay que descargar las [llaves de los desarrolladores](https://github.com/bitcoin-core/guix.sigs). Descarguemos el repositorio con las llaves para tenerlas todas:
+
 
 ```bash
-$ wget https://github.com/bitcoin/bitcoin/raw/master/contrib/builder-keys/keys.txt
+$ git clone https://github.com/bitcoin-core/guix.sigs
 ```
 
-Ahora vamos a correr el siguiente comando:
+Ahora vamos a importar las llaves a gpg para validarlas:
 
 ```bash
-$ while read fingerprint keyholder_name; do gpg --keyserver hkps://keys.openpgp.org --recv-keys ${fingerprint}; done < ./keys.txt
+$ gpg --import guix.sigs/builder-keys/*
 ```
 
-Este proceso agregará cargará las firmas de los desarrolladores actuales de bitcoin core de manera local con gpg.
+Este proceso cargará las firmas de los desarrolladores actuales de bitcoin core de manera local con gpg.
 
 Ahora vamos a verificar que el binario esté correcto:
 
@@ -63,20 +64,22 @@ Si en un futuro actualizas los binarios, deberás actualizar las llaves de los d
 $ gpg --refresh-keys
 ```
 
+Con eso terminamos de verificar que los binarios descargados están firmados por los _developers_ de bitcoin core.
+
 ## Terminamos la instalación
 
 Ahora para descomprimir el archivo utilizamos el siguiente comando ==Recuerda sustituir el nombre del archivo en los siguientes comandos== 
 ```bash
-    $ tar -xvf bitcoin-23.0-x86_64-linux-gnu.tar.gz
+    $ tar -xvf bitcoin-25.0-x86_64-linux-gnu.tar.gz
 ```
 
 Ya podemos eliminar el zip con el siguiente comando:
 
 ```bash
-    $ rm -rf bitcoin-23.0-x86_64-linux-gnu.tar.gz
+    $ rm -rf bitcoin-25.0-x86_64-linux-gnu.tar.gz
 ```
 
-Vamos a modificar el archivo .bashrc para agregar unos alias y poder correr fácilmente el nodo y el cli de bitcoin:
+Vamos a modificar el archivo `.bashrc` para agregar unos alias y poder correr fácilmente el nodo y el cli de bitcoin:
 
 ```bash
     $ nano $HOME/.bashrc
@@ -85,8 +88,14 @@ Y al final del archivo agregaremos las siguientes líneas:
 
 ```bash
 # Bitcoin Alias
-alias bitcoind="$HOME/bitcoin-23.0/bin/bitcoind"
-alias bitcoin-cli="$HOME/bitcoin-23.0/bin/bitcoin-cli"
+alias bitcoind="$HOME/nodes/bitcoin/bitcoin-25.0/bin/bitcoind"
+alias bitcoin-cli="$HOME/nodes/bitcoin/bitcoin-25.0/bin/bitcoin-cli"
+```
+
+Cambiemos de ubicación al `$HOME` utilizando el comando change directory:
+
+```bash
+$ cd $HOME
 ```
 
 Para hacer efectivas nuestra configuración correremos el siguiente comando:
@@ -135,13 +144,13 @@ Ahora vamos a probar el comando `bitcoind --help`
 
 Debería arrojarte toda la lista de comandos disponibles de `bitcoind`.
 
-Ya que corroboramos que nuestro binario y el alias funcionan, vamos a comenzar a descargar el blockchain lo cual puede tomar bastante tiempo, así que lo correremos como daemon para que podamos desconectarnos si es necesario.
+Ya que corroboramos que nuestro binario y el alias funcionan, vamos a comenzar a descargar el blockchain lo cual puede tomar bastante tiempo, así que lo correremos como `-daemon` para que podamos desconectarnos si es necesario.
 
 ```bash
 $ bitcoind -testnet -daemon
 ```
 
-Para validar cómo van los procesos del nodo crearemos un symlink de los logs en un lugar donde podamos encontrarlo fácilmente.
+Para validar cómo van los procesos del nodo crearemos un `symlink` de los logs en un lugar donde podamos encontrarlo fácilmente.
 
 ```bash
 $ ln -s ~/.bitcoin/testnet3/debug.log ~/bitcoind-testnet.log
