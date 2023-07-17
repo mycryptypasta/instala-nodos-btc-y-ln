@@ -5,7 +5,7 @@ Si llegaste a este tutorial, es probable que conozcas las características técn
 
 Si deseas pasar directo a la parte práctica puedes ir directo al capítulo [Creando una instancia Ubunto en AWS EC2](/2-creando-una-instancia-ubunto-en-aws-ec2.md).
 
-## Resumen de Bitcoin {#resumen-bitcoin}
+## Resumen de Bitcoin
 
 Bitcoin es un "Sistema de dinero electrónico de persona a persona" según lo define su *[whitepaper](https://bitcoin.org/bitcoin.pdf)* escrito por Satoshi Nakamoto. Aunque es una definición bastante concreta y se explica a detalle en el documento, sigue siendo algo complicado de entender para cualquier persona.
 
@@ -35,7 +35,7 @@ Así que al colocar un nodo de Bitcoin también estarás ayudando a crear un nod
 
 Si deseas profundizar en la parte técnica de cómo funciona esta tecnología te recomiendo el libro digital [Mastering Bitcoin](https://github.com/bitcoinbook/bitcoinbook) (Actualmente sólo en inlgés)
 
-## Resumen de Lightning Network {#resumen-lightning-network}
+## Resumen de Lightning Network
 
 Bitcoin parece una tecnología increíble y todo, pero también tiene algunos retos que estamos intentando resolver para que pueda utilizarse realmente de manera global. 
 
@@ -58,3 +58,13 @@ Si deseas profundizar en la parte técnica de cómo funciona esta tecnología te
 ---
 
 Con esto concluimos la Introducción. En el siguiente capítulo veremos paso a paso cómo [Crear una instancia Ubuntu en AWS EC2](/2-creando-una-instancia-ubuntu-en-aws-ec2.md).
+
+---
+
+Tabla de contenidos:
+
+1. Introducción Bitcoin y Lightning Network
+2. [Creando una instancia Ubuntu en AWS EC2](/2-creando-una-instancia-ubuntu-en-aws-ec2.md)
+3. [Instalación del Nodo Bitcoin](/3-instalacion-del-nodo-bitcoin.md)
+4. [Instalación del Nodo Lightning Network LND](/4-instalacion-del-nodo-lightning-network.md)
+5. [Reboot automático de Nodo Bitcoin y LND](/5-reboot-de-nodos.md)

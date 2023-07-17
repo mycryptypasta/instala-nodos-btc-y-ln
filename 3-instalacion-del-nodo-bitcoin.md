@@ -136,7 +136,7 @@ txindex=1
 
 Donde `CUSTOM_RCP_USER` y `CUSTOM_RCP_PASS` son un usuario y contraseña con que le te podrás conectar al nodo y deben ser personalizados, recuerda cambiarlos por algo seguro.
 
-Actualiza los permisos del archiuvo bitcoin.conf a 400 para que sea más seguro. Al hacer esto el archivo únicamente se podrá modificar con sudo y el servidor será el único capaz de leerlo.
+Actualiza los permisos del archivo bitcoin.conf a 400 para que sea más seguro. Al hacer esto el archivo únicamente se podrá modificar con sudo y el servidor será el único capaz de leerlo.
 
 ```bash
 $ chmod 400 .bitcoin/bitcoin.conf
@@ -200,3 +200,13 @@ Bitcoin Core stopping
 ---
 
 Con esto concluimos la Instalación del Nodo Bitcoin. En el siguiente capítulo realizaremos la [Instalación del Nodo Lightning Network LND](/4-instalacion-del-nodo-lightning-network.md).
+
+---
+
+Tabla de contenidos:
+
+1. [Introducción Bitcoin y Lightning Network](/1-introduccion-bitcoin-y-lightning-network.md)
+2. [Creando una instancia Ubuntu en AWS EC2](/2-creando-una-instancia-ubuntu-en-aws-ec2.md)
+3. Instalación del Nodo Bitcoin
+4. [Instalación del Nodo Lightning Network LND](/4-instalacion-del-nodo-lightning-network.md)
+5. [Reboot automático de Nodo Bitcoin y LND](/5-reboot-de-nodos.md)

@@ -1,4 +1,4 @@
-# Instala tu nodo Bitcoin y Lightning Network
+# Instala tu nodo Bitcoin y Lightning Network LND
 
 ## Acerca de
 
@@ -16,7 +16,7 @@ Tabla de contenidos:
 
 Puedes realizar la instalación en cualquier tipo de nube o servidor, incluso de manera local, aunque para mantener un estandar y que cualquier persona que lea este tutorial pueda reproducir los pasos utilizaremos el servicio [EC2 de AWS](https://aws.amazon.com/es/ec2/) (Amazon Web Services)
 
-> Considera que AWS EC2 es un servicio de pago y la versión con las características mínimas 2vCPU y 4 GiB RAM tiene un costo aproximado de $30 USD/mes
+> ⚠️ Considera que AWS EC2 es un servicio de pago y la versión con las características mínimas 2vCPU y 4 GiB RAM tiene un costo aproximado de **~$40 USD/mes**
 
 ## Objetivo
 
