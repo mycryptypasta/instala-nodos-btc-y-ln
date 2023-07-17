@@ -1,5 +1,7 @@
-Creando una instancia Ubunto en AWS EC2
+Creando una instancia Ubuntu en AWS EC2
 ===
+
+> Si eres una persona más visual, **puedes ver este tutorial en YouTube** [Tutorial: AWS EC2 para nodo Bitcoin y Lightning Network LND - Parte 1](https://youtu.be/DWEH5894dFg)
 
 Si ya tienes una cuenta de AWS, puedes brincar a la sección [Creando un usuario para EC2](#creando-un-usuario-para-ec2).
 
@@ -123,4 +125,6 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
 
 ```
 
-Con esto concluimos la creación de la Instancia EC2 para realizar la [Instalación del Nodo Bitcoin](/3-instalacion-del-nodo-bitcoin.md) a continuación.
+---
+
+Con esto concluimos la creación de la Instancia EC2. En el siguiente capítulo realizaremos la [Instalación del Nodo Bitcoin](/3-instalacion-del-nodo-bitcoin.md).
