@@ -284,3 +284,7 @@ Deberás ver algo como la siguiente información:
 ```
 
 El único problema hasta aquí es que para este momento tenemos cuando menos 2 terminales abiertas, una con el nodo de `lnd` y otra para operarlo con `lncli`. En la siguiente sección aprenderemos a hacer que inicien ambos nodos de manera automática sin necesidad de nuestra terminal.
+
+---
+
+Con esto concluimos la Instalación del Nodo Lightning Network LND. En el siguiente capítulo aprenderemos a crear el [Reboot automático de Nodo Bitcoin y LND](/5-reboot-de-nodos.md).

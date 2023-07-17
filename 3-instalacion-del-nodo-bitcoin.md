@@ -197,3 +197,6 @@ Si deseas detener el nodo por cualquier razón, corre el siguiente comando y esp
 $ bitcoin-cli -testnet stop
 Bitcoin Core stopping
 ```
+---
+
+Con esto concluimos la Instalación del Nodo Bitcoin. En el siguiente capítulo realizaremos la [Instalación del Nodo Lightning Network LND](/4-instalacion-del-nodo-lightning-network.md).

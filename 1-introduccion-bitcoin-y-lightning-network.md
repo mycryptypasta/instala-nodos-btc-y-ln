@@ -54,3 +54,7 @@ Actualmente Lightning Network sigue siendo una tecnología en fase Beta lo que s
 Así que al crear tu propio nodo de Lightning Network además de contribuir al crecimiento de la red, estás siendo parte de los pioneros en esta tecnología para crear un red de pagos que revolucionará al mundo financiero.
 
 Si deseas profundizar en la parte técnica de cómo funciona esta tecnología te recomiendo el libro digital [Mastering the Lightning Network](https://github.com/lnbook/lnbook) (Actualmente sólo en inlgés)
+
+---
+
+Con esto concluimos la Introducción. En el siguiente capítulo veremos paso a paso cómo [Crear una instancia Ubuntu en AWS EC2](/2-creando-una-instancia-ubuntu-en-aws-ec2.md).
