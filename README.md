@@ -9,11 +9,10 @@ Contenido
 1. [Introducción Bitcoin y Lightning Network](/1-introduccion-bitcoin-y-lightning-network.md)
 2. [Creando una instancia Ubunto en AWS EC2](/2-creando-una-instancia-ubunto-en-aws-ec2.md)
 3. [Instalación del Nodo Bitcoin](/3-instalacion-del-nodo-bitcoin.md)
-4. [Instalación del Nodo Lightning Network](/4-instalacion-del-nodo-lightning-network.md)
-5. [Fondeo y pago de factura con tu nodo](#fund)
-6. [Conclusiones](#fund)
-7. [Nodo e-clair](#node-e-clair)
-8. [Nodo c-lightning](#node-c-lightning)
+4. [Instalación del Nodo Lightning Network LND](/4-instalacion-del-nodo-lightning-network.md)
+5. [Reboot automático de Nodo Bitcoin y LND](/5-reboot-de-nodos.md)
+<!-- 6. [Fondeo y pago de factura con tu nodo LND](#fund) -->
+<!-- 7. [Conclusiones](#fund) -->
 
 Puedes realizar la instalación en cualquier tipo de servidor, incluso de manera local, aunque para mantener un estandar y que cualquier persona que lea este tutorial pueda reproducir los pasos utilizaremos el servicio [EC2 de AWS](https://aws.amazon.com/es/ec2/) (Amazon Web Services) en su versión gratuita, por lo que no será necesario invertir dinero para aprender.
 

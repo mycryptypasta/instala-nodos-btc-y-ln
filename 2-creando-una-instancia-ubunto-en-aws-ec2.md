@@ -1,5 +1,5 @@
 Creando una instancia Ubunto en AWS EC2
----
+===
 
 Si ya tienes una cuenta de AWS, puedes brincar a la sección [Creando un usuario para EC2](#creando-un-usuario-para-ec2).
 
@@ -45,41 +45,41 @@ Seleccionamos **crear instancia** y nos mandará a una pantalla para realizar la
 Para este tutorial utilizaremos Ubuntu como sistema operativo, pero bien podrías ocupar cualquier otro dependiendo lo que estés buscando.
 
 ![Crear instancia ubuntu](assets/crear-instancia-1-ubuntu.png "Crear Instancia Ubuntu")
-*<sub>Imagen 1.0</sub>*
+*<sub>Imagen 1</sub>*
 
-En la imagen 1.0 seleccionamos Ubuntu como sistema operativo y ocupamos la versión 20.04 LTS
+En la imagen 1 seleccionamos Ubuntu como sistema operativo y ocupamos la versión 20.04 LTS
 
 A continuación buscamos una instancia con al menos 4 GiB de RAM. Es posible utilizar instancias con 1 GiB de RAM de la capa gratuita, pero una vez sincronizado el *blockchain* de Bitcoin y dejar corriendo el nodo la memoria quedará saturada, lo que hará muy complicado operarlo.
 
 ![Hardware de la Instancia](assets/crear-instancia-2-hardware.png "Hardware de la Instancia")
-*<sub>Imagen 1.1</sub>*
+*<sub>Imagen 2</sub>*
 
 Para conectarnos a la instancia de manera segura, es necesario crear una llave de acceso RSA. Daremos clic en la opción "Crear un nuevo par de claves".
 ![Access Key option](assets/crear-instancia-3-access-key-2.png "Clic a opción de clave")
-*<sub>Imagen 1.2</sub>*
+*<sub>Imagen 3</sub>*
 
-Coloca cualquier nombre al par de claves, de preferencia sin espacios ni cracteres especiales, en Tipo de par de claves selecciona **RSA** y en Formato de archivo de clave privada elige la opción **.pem** (ver imagen 1.3)
+Coloca cualquier nombre al par de claves, de preferencia sin espacios ni cracteres especiales, en Tipo de par de claves selecciona **RSA** y en Formato de archivo de clave privada elige la opción **.pem** (ver imagen 4)
 ![Access Key settings](assets/crear-instancia-3-access-key.png "Opciones de Claves de Acceso")
-*<sub>Imagen 1.3</sub>*
+*<sub>Imagen 4</sub>*
 
 El archivo que se genera al concluír este paso es muy importante, guardalo en algún lugar seguro ya que lo ocuparemos después para conectarnos a la instancia.
 
-Ahora vamos a configurar la seguridad para acceder a la instancia seleccionando la opción **"Crear grupo de seguridad"** y activando la opción **"Permitir el tráfico de SSH desde"** y dejando **"Anywhere"** habilitado como en la imagen 1.4.
+Ahora vamos a configurar la seguridad para acceder a la instancia seleccionando la opción **"Crear grupo de seguridad"** y activando la opción **"Permitir el tráfico de SSH desde"** y dejando **"Anywhere"** habilitado como en la imagen 5.
 
 ![Configuraciones de red](assets/crear-instancia-4-seguridad.png "Configuraciones de red")
-*<sub>Imagen 1.4</sub>*
+*<sub>Imagen 5</sub>*
 
 Sería mejor limitar el acceso únicamente a la IP por la cual nos conectaremos, pero por fines de practicidad para el tutorial lo dejaremos con *Anywhere*. Si deseas cambiar esta opción, podrás hacerlo más adelante y únicamente debes colocar tu IP.
 
 Para finalizar, vamos a seleccionar la capacidad de almacenamiento que tendrá nuestra instancia. Te sugerimos colocar cuando menos 50 GiB para **testnet** ya que sincronizaremos el blockchain de Bitcoin e información de Lightning Network.
 
 ![Almacenamiento](assets/crear-instancia-5-almacenamiento.png "Almacenamiento")
-*<sub>Imagen 1.5</sub>*
+*<sub>Imagen 6</sub>*
 
 Para concluir, se nos mostrará un resumen de todas las opciones seleccionadas. Valida que estén todas las opciones que deseas y da clic en **Lanzar Instancia** 
 
 ![Resumen Instancia](assets/crear-instancia-5-resumen.png "Resumen Instancia")
-*<sub>Imagen 1.6</sub>*
+*<sub>Imagen 7</sub>*
 
 ¡Felicidades! Para este punto ya tienes una instancia EC2 con las características necesarias para instalar los nodos. Ahora vamos a conectarnos.
 
@@ -88,14 +88,14 @@ Para concluir, se nos mostrará un resumen de todas las opciones seleccionadas. 
 Una vez creada la instancia nos mostrará una pantalla donde nos sugerirá los siguientes pasos, entre ellos encontraremos **"Conectarse a la instancia"**, da clic ahí.
 
 ![Conectarse a la instancia](assets/conetarse-1-connect.png "Conectarse a la instancia")
-*<sub>Imagen 1.7</sub>*
+*<sub>Imagen 8</sub>*
 
 Ahora veremos todas las opciones existentes para conectarnos a nuestra instancia, selecciona **Cliente SSH** ya que nos conectaremos utilizando la terminal.
 
 ![Cliente SSH](assets/conetarse-2-pantalla.png "Cliente SSH")
-*<sub>Imagen 1.8</sub>*
+*<sub>Imagen 9</sub>*
 
-¿Recuerdas el archivo .pem que generamos anteriormente? Localízalo utilizando tu terminal y vamos a correr el comando que se indica en el Paso 2 de la imagen 1.8.
+¿Recuerdas el archivo .pem que generamos anteriormente? Localízalo utilizando tu terminal y vamos a correr el comando que se indica en el Paso 2 de la imagen 9.
 
 Algo así serían los pasos en la terminal:
 
@@ -111,7 +111,7 @@ Recuerda utilizar el nombre de tu archivo pem en el comando chmod.
 
 El comando **chmod** asigna el permiso **400**, lo que significa que únicamente el sistema puede ejecutar el archivo, pero nadie puede leer o editar, de esta manera el archivo es más seguro.
 
-Ahora suponiendo que la terminal está ubicada en el folder que contiene nuestro archivo .pem, podemos correr el comando señalado en el ejemplo de la imagen 1.8 para conectarnos a nuestra instancia.
+Ahora suponiendo que la terminal está ubicada en el folder que contiene nuestro archivo .pem, podemos correr el comando señalado en el ejemplo de la imagen 9 para conectarnos a nuestra instancia.
 
 ```
 $ ssh -i "node-manager-access.pem" ubuntu@xxx-xx-xxx-xxx-xxx.compute-1.amazonaws.com

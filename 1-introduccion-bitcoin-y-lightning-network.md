@@ -1,5 +1,5 @@
 Introducción Bitcoin y Lightning Network
----
+===
 
 Si llegaste a este tutorial, es probable que conozcas las características técnicas de Bitcoin y Lightning Network, sin embargo, nuestra filosofía para enseñar es facilitar los conceptos básicos para que cualquier persona que desee aprender pueda hacerlo sin necesidad de tener un desarrollo como programador; así que vamos tocar rápidamente los puntos más importantes para entender la importancia de ambas tecnologías antes de comenzar la instalación.
 
