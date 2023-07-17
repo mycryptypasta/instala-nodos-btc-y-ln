@@ -1,5 +1,5 @@
 Instalación del Nodo Bitcoin
----
+===
 
 Ya que podemos acceder a nuestra instancia EC2 desde terminal, vamos a buscar los binarios del nodo de bitcoin para instalarlo.
 
@@ -66,23 +66,23 @@ $ gpg --refresh-keys
 
 Con eso terminamos de verificar que los binarios descargados están firmados por los _developers_ de bitcoin core.
 
-## Terminamos la instalación
+## Instalación de Nodo Bitcoin
 
 Ahora para descomprimir el archivo utilizamos el siguiente comando ==Recuerda sustituir el nombre del archivo en los siguientes comandos== 
 ```bash
-    $ tar -xvf bitcoin-25.0-x86_64-linux-gnu.tar.gz
+$ tar -xvf bitcoin-25.0-x86_64-linux-gnu.tar.gz
 ```
 
 Ya podemos eliminar el zip con el siguiente comando:
 
 ```bash
-    $ rm -rf bitcoin-25.0-x86_64-linux-gnu.tar.gz
+$ rm -rf bitcoin-25.0-x86_64-linux-gnu.tar.gz
 ```
 
 Vamos a modificar el archivo `.bashrc` para agregar unos alias y poder correr fácilmente el nodo y el cli de bitcoin:
 
 ```bash
-    $ nano $HOME/.bashrc
+$ nano $HOME/.bashrc
 ```
 Y al final del archivo agregaremos las siguientes líneas:
 
@@ -101,18 +101,18 @@ $ cd $HOME
 Para hacer efectivas nuestra configuración correremos el siguiente comando:
 
 ```bash
-    $ . .bashrc
+$ . .bashrc
 ```
 
 Vamos a crear el directorio .bitcoin con permisos 755 donde se guardará toda la información del nodo.
 
 ```bash
-    $ mkdir -m 755 .bitcoin
+$ mkdir -m 755 .bitcoin
 ```
 Vamos a crear el archivo bitcoin.conf para configurar las opciones de nuestro nodo
 
 ```bash
-    $ nano .bitcoin/bitcoin.conf
+$ nano .bitcoin/bitcoin.conf
 ```
 
 Y agrega la siguiente información al archivo y cambia CUSTOM_RCP_USER y CUSTOM_RCP_PASS por información segura ya que serán lo accesos de comunicación entre en nodo de Bitcoin y LND:
@@ -134,10 +134,12 @@ rpcallowip=127.0.0.1
 txindex=1
 ```
 
+Donde `CUSTOM_RCP_USER` y `CUSTOM_RCP_PASS` son un usuario y contraseña con que le te podrás conectar al nodo y deben ser personalizados, recuerda cambiarlos por algo seguro.
+
 Actualiza los permisos del archiuvo bitcoin.conf a 400 para que sea más seguro. Al hacer esto el archivo únicamente se podrá modificar con sudo y el servidor será el único capaz de leerlo.
 
 ```bash
-   $ chmod 400 .bitcoin/bitcoin.conf
+$ chmod 400 .bitcoin/bitcoin.conf
 ```
 
 Ahora vamos a probar el comando `bitcoind --help`
