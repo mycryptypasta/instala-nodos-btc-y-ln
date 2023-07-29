@@ -134,11 +134,11 @@ Al correrlo la última línea que veas debería mostrar algo como lo siguiente:
 
 Que nos indica que es necesario crear una nueva wallet o utilizar una ya existente. En este caso vamos a asumir que no tenemos wallet y es necesario crearla.
 
-> Puedes cancelar el comando anterior utilizando el comando `ctrl + c` para seguir avanzando, pero es necesario dejar el nodo activado para crear nuestra wallet.
+> Puedes cancelar el comando anterior utilizando el comando `ctrl + c` para seguir avanzando, pero **es necesario dejar el nodo activo** para crear nuestra wallet.
 
 Dejemos corriendo nuestro nodo en la terminar que tenemos abierta y abramos una nueva conexión en otra terminal para continuar con el proceso.
 
-> Antes de crear nuestra wallet, te recomiendo crear una contraseña fuerte, lo puedes hacer con un generador de contraseñas o utilizando el siguiente comando que creará una contraseña random de 21 caracteres en hexadecimal (o base64 cambiando -hex por -base64) y lo guardará en un archivo en el servidor para poder iniciar nuestro nodo automáticamente.
+> Antes de crear nuestra wallet, te recomiendo crear una contraseña fuerte, lo puedes hacer con un generador de contraseñas o utilizando el siguiente comando que creará una contraseña random de 21 caracteres en hexadecimal (o base64 cambiando `-hex` por `-base64`) y lo guardará en un archivo en el servidor para poder iniciar nuestro nodo automáticamente.
 
 ```bash
 $ openssl rand -hex 21 > ~/.lnd/wallet_password
@@ -189,7 +189,7 @@ Si te aparece el siguiente error es porque apagaste o se apagó tu nodo lnd y no
 
 #### Success: Haz creado tu wallet
 
-Si todo funcionó correctamente verás algo parecido que deberás guardar ya que es tu seed para restaurar tu wallet.
+Si todo funcionó correctamente verás algo parecido que **deberás guardar de manera segura** ya que es tu seed para restaurar tu wallet.
 
 ```bash
 Generating fresh cipher seed...
@@ -288,3 +288,13 @@ El único problema hasta aquí es que para este momento tenemos cuando menos 2 t
 ---
 
 Con esto concluimos la Instalación del Nodo Lightning Network LND. En el siguiente capítulo aprenderemos a crear el [Reboot automático de Nodo Bitcoin y LND](/5-reboot-de-nodos.md).
+
+---
+
+Tabla de contenidos:
+
+1. [Introducción Bitcoin y Lightning Network](/1-introduccion-bitcoin-y-lightning-network.md)
+2. [Creando una instancia Ubuntu en AWS EC2](/2-creando-una-instancia-ubuntu-en-aws-ec2.md)
+3. [Instalación del Nodo Bitcoin](/3-instalacion-del-nodo-bitcoin.md)
+4. Instalación del Nodo Lightning Network LND
+5. [Reboot automático de Nodo Bitcoin y LND](/5-reboot-de-nodos.md)
